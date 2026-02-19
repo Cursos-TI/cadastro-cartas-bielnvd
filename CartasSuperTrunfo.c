@@ -33,12 +33,6 @@ scanf (" %f", &pib);
 
 printf ("Quantos pontos turisticos possui a cidade?\n");
 scanf (" %d", &pontos_turisticos);
-//impressão de dados.
-printf ("Número da carta: %d\n"  "Letra do estado: %c\n" , carta, letra);
-printf ("Código da carta: %s\n"  "Nome da cidade: %s \n", codigo, nome_cidade);
-printf ("População: %d\n" "Àrea da cidade: %.2f\n", população, area);
-printf ("PIB do estado: %f\n"  "Pontos Turisticos: %d\n", pib, pontos_turisticos);
-//fim da impressão da primeira carta.
 //Entrada de dados da segunda carta:
 printf ("Número da carta:\n ", carta2);
 scanf (" %d", &carta2);
@@ -65,6 +59,12 @@ printf ("Quantos pontos turisticos possui a cidade?\n", pontos_turisticos2);
 scanf (" %d", &pontos_turisticos2);
 
 //impressão.
+//primeira carta
+printf ("Número da carta: %d\n"  "Letra do estado: %c\n" , carta, letra);
+printf ("Código da carta: %s\n"  "Nome da cidade: %s \n", codigo, nome_cidade);
+printf ("População: %d\n" "Àrea da cidade: %.2f\n", população, area);
+printf ("PIB do estado: %f\n"  "Pontos Turisticos: %d\n", pib, pontos_turisticos);
+//segunda carta
 printf ("Número da carta: %d\n" "Letra do estado: %c\n" , carta2, letra2);
 printf ("Código da carta: %s\n"  "Nome da cidade: %s \n", codigo2, nome_cidade2);
 printf ("População: %d\n" "Àrea da cidade: %.2f\n", população2, area2);
