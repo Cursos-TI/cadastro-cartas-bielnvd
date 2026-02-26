@@ -70,6 +70,7 @@ densidade_populacional2 = (double) população2/ area2;
 per_capita2 = (double) pib2/ população2; 
 
 //impressão.
+printf ("------------------CARTA 1------------------\n");
 printf ("Número da carta: %d\n"  "Letra do estado: %c\n" , carta, letra);
 printf ("Código da carta: %s\n"  "Nome da cidade: %s \n", codigo, nome_cidade);
 printf ("População: %lu\n" "Àrea da cidade: %.2lfdm²\n", população, area);
