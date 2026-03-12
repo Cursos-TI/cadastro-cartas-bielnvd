@@ -2,13 +2,13 @@
 
 int main() {
   // Declaração de variáveis:
-int carta, pontos_turisticos;
+int carta, pontos_turisticos, opcao;
 char letra = 'A', nome_cidade [70], nome [100], codigo [60];
 double pib, area, densidade_populacional, per_capita;
 unsigned long int população;
 
 //declarando variáveis da segunda carta:
-int carta2, pontos_turisticos2;
+int carta2, pontos_turisticos2, opcao2;
 char letra2 = 'B', nome_cidade2 [77], nome2 [100], codigo2 [100];
 double pib2, area2, densidade_populacional2, per_capita2;
 unsigned long int população2;
@@ -90,77 +90,82 @@ printf ("O Pib Per Capita é: %.2lf R$\n", per_capita2);
 //soma dos atributos para o superpoder:
 double superpoder1 = população +  pontos_turisticos + area + pib + densidade_populacional + per_capita;
 double superpoder2 = população2 + pontos_turisticos2 + area2 + pib2 + densidade_populacional2 + per_capita2;
-//comparação entre as cartas:
-printf ("----------------------COMPARAÇÃO DAS CARTAS-------------------------------\n");
-if (população > população2) {
-printf ("Primeira carta ganhou em popualção! - População: %lu\n", população);
-}
-else if (população < população2){
-printf ("Segunda carta ganhou em população! - População: %lu\n", população2);
-}
-else if (população == população2) {
-printf ("Impressionante, as duas cartas empataram em população! - População: %lu\n", população);
-}
 
-if (pontos_turisticos > pontos_turisticos2) {
-printf ("Primeira carta ganhou em pontos turisticos! - Pontos turisticos: %d\n", pontos_turisticos);
-}
-else if (pontos_turisticos < pontos_turisticos2){
-printf ("Segunda carta ganhou em pontos turisticos! - Pontos turisticos: %d\n", pontos_turisticos2);
-}
-else if (pontos_turisticos == pontos_turisticos2) {
-printf ("Impressionante, as duas cartas empataram em pontos turisticos! - Pontos turisticos: %d\n", pontos_turisticos);
-}
+printf ("Escolha um atributo para comparar com a segunda carta:\n");
+printf ("1. População.\n");
+printf ("2. Àrea.\n");
+printf ("3. PIB.\n");
+printf ("4. Número de pontos turísticos.\n");
+printf ("5. Densidade demográfica.\n");
+printf ("6. Superpoder.");
+scanf ("%d", &opcao);
 
-if ( area > area2) {
-printf ("Primeira carta ganhou em área! - Área: %.2lfdm²\n", area);
-}
-else if (area < area2){
-printf ("Segunda carta ganhou em área! - Área: %.2lfdm²\n", area2);
-}
-else if (area == area2) {
-printf ("Impressionante, as duas cartas empataram em área! - Área: %.2lfdm²\n", area);
-}
+switch (opcao)
+{
+case 1:
+   if (população > população2) {
+   printf ("Primeira carta venceu!\nVencedor: %lu - Perdedor: %lu", população, população2);
+   } else if (população < população2) {
+    printf ("Segunda carta venceu!\nVencedor: %lu - Perdedor: %lu", população2, população);
+   } else {
+   printf (" Empate!\n Primeira carta: %lu - Segunda carta: %lu", população, população2); 
+   }
 
+  break;
+case 2:
+if (area > area2) {
+   printf ("Primeira carta venceu!\n Vencedor: %.2f - Perdedor: %.2f", area, area2);
+   } else if (area < area2) {
+    printf ("Segunda carta venceu!\n Vencedor: %.2f - Perdedor: %.2f", area2, area);
+   } else {
+   printf (" Empate!\n Primeira carta:\n %.2f - Segunda carta: %.2f", area, area2); 
+   }
+break;
+
+case 3:
 if (pib > pib2) {
-printf ("Primeira carta ganhou em PIB! - PIB: %.2lf\n", pib);
-}
-else if (pib < pib2){
-printf ("Segunda carta ganhou em PIB! - PIB: %.2lf\n", pib2);
-}
-else if (pib == pib2) {
-printf ("Impressionante, as duas cartas empataram em PIB! - PIB: %.2lf\n", pib);
-}
+   printf ("Primeira carta venceu!\n Vencedor: %.2f - Perdedor: %.2f", pib, pib2);
+   } else if (pib < pib2) {
+    printf ("Segunda carta venceu!\n Vencedor: %.2f - Perdedor: %.2f", pib2, pib);
+   } else {
+   printf (" Empate!\n Primeira carta: %.2f - Segunda carta: %.2f", pib, pib2); 
+   }
+break;
 
-if (densidade_populacional < densidade_populacional2) {
-printf ("Primeira carta ganhou em densidade populacional! - Densidade: %.4lf hab/km²\n", densidade_populacional);
-}
-else if (densidade_populacional > densidade_populacional2){
-printf ("Segunda carta ganhou em densidade populacional! - Densidade: %.4lf hab/km²\n", densidade_populacional2);
-}
-else if (densidade_populacional == densidade_populacional2) {
-printf ("Impressionante, as duas cartas empataram em densidade populacional! - Densidade: %.4lf hab/km²\n", densidade_populacional);
-}
+case 4:
+if (pontos_turisticos > pontos_turisticos2) {
+   printf ("Primeira carta venceu!\nVencedor: %d - Perdedor: %d", pontos_turisticos, pontos_turisticos2);
+   } else if (pontos_turisticos < pontos_turisticos2) {
+    printf ("Segunda carta venceu!\nVencedor: %d - Perdedor: %d", pontos_turisticos2, pontos_turisticos);
+   } else {
+   printf (" Empate!\n Primeira carta: %d - Segunda carta: %d", pontos_turisticos, pontos_turisticos2); 
+   }
+break;
 
-if ( per_capita > per_capita2) {
-printf ("Primeira carta ganhou em PIB per capita! - PIB per capita: %.2lf R$\n", per_capita);
-}
-else if (per_capita < per_capita2){
-printf ("Segunda carta ganhou em PIB per capita! - PIB per capita: %.2lf R$\n", per_capita2);
-}
-else if (per_capita == per_capita2) {
-printf ("Impressionante, as duas cartas empataram em PIB per capita! - PIB per capita: %.2lf R$\n", per_capita);
-}
+case 5:
+if (densidade_populacional > densidade_populacional2) {
+   printf ("Segunda carta venceu!\nvencedor: %.2f - Perdedor: %.2f", densidade_populacional2, densidade_populacional);
+   } else if (densidade_populacional < densidade_populacional2) {
+    printf ("Primeira carta venceu!\nVencedor: %.2f - Perdedor: %.2f", densidade_populacional, densidade_populacional2);
+   } else {
+   printf (" Empate!\n Primeira carta: %.2f - Segunda carta: %.2f", densidade_populacional, densidade_populacional2); 
+   }
+break;
+case 6:
+if (superpoder1 > superpoder2 ) {
+   printf ("Primeira carta venceu!\nvencedor: %.2f - Perdedor: %.2f", superpoder1, superpoder2);
+   } else if (superpoder1 < superpoder2) {
+    printf ("Segunda carta venceu!\nVencedor: %.2f - Perdedor: %.2f", superpoder2, superpoder1);
+   } else {
+   printf (" Empate!\nPrimeira carta: %.2f - Segunda carta: %.2f\n", superpoder1, superpoder2); 
+   }
+break;
 
-if ( superpoder1 > superpoder2) {
-printf ("Primeira carta ganhou em superpoder! - Superpoder: %.2lf\n", superpoder1);
+default:
+printf ("Selicione um atributo válido e tente novamente!");
+  break;
+  
 }
-else if (superpoder1 < superpoder2){
-printf ("Segunda carta ganhou em superpoder! - Superpoder: %.2lf\n", superpoder2);
-}
-else if (superpoder1 == superpoder2) {
-printf ("Impressionante, as duas cartas empataram em superpoder! - Superpoder carta 1: %.2lf, Superpoder carta 2: %.2lf\n", superpoder1, superpoder2);
-}
-
+  
 return 0;
 }
